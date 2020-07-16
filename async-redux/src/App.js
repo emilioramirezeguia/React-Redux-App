@@ -1,18 +1,19 @@
 import React from "react";
-import { connect } from "react-redux";
+import Joke from "./components/Joke";
 import "./App.css";
 
 function App(props) {
   return (
     <div className="App">
-      <h1>Hello from Redux Store {props.name}!</h1>
+      <h1>
+        How about some programming jokes?
+        <span role="img" aria-label="emoji">
+          😂
+        </span>
+      </h1>
+      <Joke />
     </div>
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    name: state.name,
-  };
-};
-export default connect(mapStateToProps, {})(App);
+export default App;
