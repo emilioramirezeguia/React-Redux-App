@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { newJokes } from "./store/actions/actions";
 import Joke from "./components/Joke";
 import "./App.css";
 
@@ -12,8 +14,9 @@ function App(props) {
         </span>
       </h1>
       <Joke />
+      <button onClick={props.newJokes}>Another one</button>
     </div>
   );
 }
 
-export default App;
+export default connect(null, { newJokes })(App);
